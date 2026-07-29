@@ -15,7 +15,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <span class="section-label">Research</span>
       <h1 class="hero-page-title">Our Research Areas</h1>
-      <p class="hero-page-desc">We combine rigorous numerical method development with physics-driven investigation of unsteady flow phenomena across four interconnected research thrusts.</p>
+      <p class="hero-page-desc">We combine rigorous numerical method development with physics-driven investigation of unsteady flow phenomena across three interconnected research thrusts.</p>
     </div>
   </section>
 
@@ -23,51 +23,39 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="section">
     <div class="container">
 
-      <!-- ── Fluid–Metamaterial Interaction ── -->
-      <div id="fluid-metamaterial-interaction" class="research-section">
-        <img src="/images/research/fluid-metamaterial-interaction.png" alt="Fluid–Metamaterial Interaction" class="research-image" />
+      <!-- ── Emergent Flow-Structure Interaction ── -->
+      <div id="emergent-flow-structure-interaction" class="research-section">
+        <img src="/images/research/emergent-flow-structure-interaction.png" alt="Emergent Flow-Structure Interaction" class="research-image" />
         <div class="research-text-col">
 
-          <h2 class="research-heading">Fluid–Metamaterial Interaction</h2>
+          <h2 class="research-heading">Emergent Flow-Structure Interaction</h2>
           <div class="research-body">
-            <p>We study how engineered mechanical metamaterials interact with unsteady aerodynamic flows. These structures can exhibit unusual effective properties, such as tailored stiffness, band gaps, and direction-dependent responses, which may lead to new forms of passive or semi-passive flow control.</p>
-            <p>Our goal is to understand how these material properties influence the coupled fluid–structure dynamics when the metamaterial is embedded in or attached to aerodynamic surfaces such as airfoils. By analyzing the resulting motion, loading, vortex dynamics, and wake response, we aim to identify mechanisms that can improve aerodynamic performance.</p>
+            <p>We target passive, adaptive solutions to unresolved flow control problems. We do this by pairing new architected structures with behaviors matched to the time- and length-scales, directional dependence, and state changes of the underlying flow. These architectures can be designed through bio-inspiration or advances in various structural mechanics communities.</p>
+            <p>We are also interested in creating new coupled behaviors for better flow sensing and estimation, harnessing mechanical computation to facilitate non-centralized logic for control and sensing, and any arena where new structural behaviors produce bewitching coupled behavior.</p>
           </div>
         </div>
       </div>
 
-      <!-- ── Modal Analysis of Fluid Flows ── -->
-      <div id="modal-analysis" class="research-section alt">
-        <img src="/images/research/modal-analysis.png" alt="Modal Analysis of Fluid Flows" class="research-image" />
+      <!-- ── Computational Frameworks for Flow-Interface Problems ── -->
+      <div id="computational-frameworks" class="research-section alt">
+        <img src="/images/research/computational-frameworks.png" alt="Computational Frameworks for Flow-Interface Problems" class="research-image" />
         <div class="research-text-col">
-          <h2 class="research-heading">Modal Analysis of Fluid Flows</h2>
+          <h2 class="research-heading">Computational Frameworks for Flow-Interface Problems</h2>
           <div class="research-body">
-            <p>We use modal analysis techniques to identify coherent structures, dominant frequencies, and amplification mechanisms in unsteady fluid flows. These approaches help reduce complex flow fields into physically interpretable modes that reveal the organizing dynamics of the system.</p>
-            <p>Our work draws on data-driven methods such as proper orthogonal decomposition (POD) and dynamic mode decomposition (DMD), as well as operator-based approaches connected to the Navier–Stokes equations, including linear stability analysis and resolvent analysis.</p>
+            <p>We build computational tools to study coupled problems for flows involving interfaces. We seek creative solutions that are rigorously accurate in their treatment of the interfaces while preserving speed and modularity.</p>
+            <p>We want methods that have the same complexity as solvers for flows without interfaces, and we want to introduce as few additional (non)linear systems and operator modifications as possible, so that highly tuned flow and structure solvers can readily adopt our interface treatment. We also want to build tools that can directly make use of GPU architectures and tools like automatic differentiation that are fueling a new generation of machine learning and optimization algorithms.</p>
           </div>
         </div>
       </div>
 
-      <!-- ── Bio-Inspired Design ── -->
-      <div id="bio-inspired-design" class="research-section">
-        <img src="/images/research/bio-inspired.png" alt="Bio-Inspired Design" class="research-image" />
+      <!-- ── Geometric and Dynamic Foundations for Flow Simulations ── -->
+      <div id="geometric-dynamic-foundations" class="research-section">
+        <img src="/images/research/geometric-dynamic-foundations.png" alt="Geometric and Dynamic Foundations for Flow Simulations" class="research-image" />
         <div class="research-text-col">
-          <h2 class="research-heading">Bio-Inspired Design</h2>
+          <h2 class="research-heading">Geometric and Dynamic Foundations for Flow Simulations</h2>
           <div class="research-body">
-            <p>We draw inspiration from nature to develop innovative solutions for fluid dynamics problems. Our work focuses on understanding the underlying mechanisms of biological systems and translating these insights into engineering applications.</p>
-            <p>Examples include the study of bird flight mechanics, and the design of bio-inspired micro air vehicles.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── Numerical Methods ── -->
-      <div id="numerical-methods" class="research-section alt">
-        <img src="/images/research/numerical-methods.png" alt="Numerical Method Development" class="research-image" />
-        <div class="research-text-col">
-          <h2 class="research-heading">Numerical Method Development</h2>
-          <div class="research-body">
-            <p>Advances in computational fluid dynamics depend on robust, efficient numerical methods. We develop novel immersed boundary formulations for unsteady incompressible flows.</p>
-            <p>A major effort is the open-source Julia package Immersa.jl, which provides a modular, high-performance framework for immersed boundary simulations on structured grids.</p>
+            <p>We believe that fast and accurate computations for fluid flows — high order and reduced — require creative engagement with concepts not typically leveraged in computational fluid dynamics. We are pursuing geometric perspectives of the interface boundary conditions and the algorithms it implies.</p>
+            <p>We are using phase space representations of strongly cyclical systems and how that can be used to categorize within and across cycles of behavior. We are willing to fail big in the hunt to create new framings of old problems that, if successful, unlock big changes to how we understand and compute them.</p>
           </div>
         </div>
       </div>

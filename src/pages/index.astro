@@ -23,15 +23,19 @@ const top3Pubs = recentPubs.slice(0, 3);
   title="Home | NUF Group — UIUC"
   description="Numerics and Unsteady Flows Group at UIUC — computational fluid dynamics, fluid–structure interaction, and bio-inspired propulsion."
 >
+<!-- The .editorial wrapper scopes the new visual language to this page.
+     Remove it and the home page reverts to the original styling. -->
+<div class="editorial">
 
   <!-- ── Hero ── -->
-  <section class="hero-light">
+  <section class="hero-light technical-grid">
     <div class="container hero-light-content">
-      <p class="hero-light-eyebrow">Department of Aerospace Engineering · UIUC</p>
+      <p class="hero-light-eyebrow label-mono">Department of Aerospace Engineering · UIUC</p>
       <h1 class="hero-light-title">Numerics &amp; <em>Unsteady Flows</em> Group</h1>
       <p class="hero-light-description">
         We develop high-fidelity numerical methods and open-source tools to understand
-        the rich physics of unsteady flows — from bio-inspired design to interaction with metamaterials.
+        the rich physics of unsteady flows — from emergent interactions with architected
+        structures and metamaterials to the numerical foundations that make simulating them possible.
       </p>
       <div class="hero-actions">
         <a href="/research" class="btn btn-primary">Explore Our Research</a>
@@ -44,16 +48,32 @@ const top3Pubs = recentPubs.slice(0, 3);
   <section class="section">
     <div class="container about-inner">
       <div class="about-text">
-        <span class="section-label">Who We Are</span>
-        <h2 class="section-title">Advancing Computational Fluid Dynamics</h2>
+        <div class="numbered">
+          <span class="numeral" aria-hidden="true">01</span>
+          <span class="label-mono">Who We Are</span>
+          <h2 class="section-title editorial-title">Advancing Computational Fluid Dynamics</h2>
+        </div>
         <p>
-          Welcome! The Numerics and Unsteady Flows (NUF) Group at the University of Illinois
-          Urbana-Champaign investigates fundamental and applied problems at the intersection
-          of fluid mechanics and computational science. Our work combines rigorous numerical
-          method development with physics-driven analysis to reveal the mechanisms that govern
-          complex, unsteady fluid flows.
+          Welcome! We are passionate about <strong>emergent</strong> flow-structure interaction — systems
+          where natural or engineered heterogeneity, architecture, and shape leads to new
+          coupled behaviors that do not exist when studying flow interacting with conventional
+          structures.
         </p>
-        <p style="margin-top:1rem;">
+        <p>
+          We bring creativity, curiosity, and strong engagement across biology,
+          structural mechanics, and fluid mechanics communities, to identify what coupled
+          behaviors to investigate and target what engineering breakthroughs may be unlockable.
+          We quantify the coupled behaviors with high-accuracy tools that we develop, maintain,
+          and provide open access to (with accessible accompanying documentation!). We are
+          passionate about designing these tools to be fast, rigorously derivable, and as modular
+          as possible for use across platforms and different flow and structure solvers.
+        </p>
+        <p>
+          All tools we develop are done to take advantage of the latest advances in GPU capabilities
+          and automatic differentiation-enabled gradient information, to enable faster computation
+          and advanced analysis to uncover the deepest mysteries of these beautiful systems we study.
+        </p>
+        <p>
           We are part of the <strong>Department of Aerospace Engineering</strong> within the
           Grainger College of Engineering and welcome collaboration across engineering, biology,
           and applied mathematics.
@@ -69,55 +89,47 @@ const top3Pubs = recentPubs.slice(0, 3);
     </div>
   </section>
 
-  <!-- ── Research Areas ── -->
+  <!-- ── Research Arcs ── -->
   <section class="section section-alt">
     <div class="container">
-      <span class="section-label">What We Study</span>
-      <h2 class="section-title">Research Areas</h2>
-      <p class="section-subtitle">Our work spans fluid–metamaterial interaction, modal flow analysis, bio-inspired design, and numerical method development.</p>
-      <div class="grid-4">
+      <div class="numbered">
+        <span class="numeral" aria-hidden="true">02</span>
+        <span class="label-mono">What We Study</span>
+        <h2 class="section-title editorial-title">Research Arcs</h2>
+      </div>
+      <p class="section-subtitle">Our work spans emergent flow-structure interaction, computational frameworks for flow-interface problems, and the geometric and dynamic foundations of flow simulation.</p>
+      <div class="grid-3">
 
         <article class="research-card">
           <div class="card-image">
-            <img src="/images/research/fluid-metamaterial-interaction.png" alt="Fluid–Metamaterial Interaction" />
+            <img src="/images/research/emergent-flow-structure-interaction.png" alt="Emergent Flow-Structure Interaction" />
           </div>
           <div class="card-body">
-            <h3 class="card-title">Fluid–Metamaterial Interaction</h3>
-            <p class="card-desc">Studying how engineered mechanical metamaterials coupled with unsteady aerodynamic flows can enable passive and semi-passive flow control.</p>
-            <a href="/research#fluid-metamaterial-interaction" class="card-link">Learn more →</a>
+            <h3 class="card-title">Emergent Flow-Structure Interaction</h3>
+            <p class="card-desc">Pairing architected structures with the scales, directionality, and state changes of the underlying flow to unlock passive, adaptive flow control and sensing.</p>
+            <a href="/research#emergent-flow-structure-interaction" class="card-link">Learn more →</a>
           </div>
         </article>
 
         <article class="research-card">
           <div class="card-image">
-            <img src="/images/research/modal-analysis.png" alt="Modal Analysis of Fluid Flows" />
+            <img src="/images/research/computational-frameworks.png" alt="Computational Frameworks for Flow-Interface Problems" />
           </div>
           <div class="card-body">
-            <h3 class="card-title">Modal Analysis of Fluid Flows</h3>
-            <p class="card-desc">Identifying coherent structures and amplification mechanisms in unsteady flows using data-driven and operator-based modal techniques.</p>
-            <a href="/research#modal-analysis" class="card-link">Learn more →</a>
+            <h3 class="card-title">Computational Frameworks for Flow-Interface Problems</h3>
+            <p class="card-desc">Interface treatments that stay rigorously accurate without sacrificing speed or modularity, built to exploit GPUs and automatic differentiation.</p>
+            <a href="/research#computational-frameworks" class="card-link">Learn more →</a>
           </div>
         </article>
 
         <article class="research-card">
           <div class="card-image">
-            <img src="/images/research/bio-inspired.png" alt="Bio-Inspired Design" />
+            <img src="/images/research/geometric-dynamic-foundations.png" alt="Geometric and Dynamic Foundations for Flow Simulations" />
           </div>
           <div class="card-body">
-            <h3 class="card-title">Bio-Inspired Design</h3>
-            <p class="card-desc">Drawing from nature to design next-generation aerodynamic surfaces and micro air vehicles informed by bird flight mechanics.</p>
-            <a href="/research#bio-inspired-design" class="card-link">Learn more →</a>
-          </div>
-        </article>
-
-        <article class="research-card">
-          <div class="card-image">
-            <img src="/images/research/numerical-methods.png" alt="Numerical Method Development" />
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Numerical Method Development</h3>
-            <p class="card-desc">Developing immersed boundary formulations and open-source tools for high-fidelity simulation of unsteady incompressible flows.</p>
-            <a href="/research#numerical-methods" class="card-link">Learn more →</a>
+            <h3 class="card-title">Geometric and Dynamic Foundations for Flow Simulations</h3>
+            <p class="card-desc">Geometric perspectives on interface boundary conditions and phase-space views of cyclical flows, reframing old problems to compute them faster.</p>
+            <a href="/research#geometric-dynamic-foundations" class="card-link">Learn more →</a>
           </div>
         </article>
 
@@ -132,8 +144,11 @@ const top3Pubs = recentPubs.slice(0, 3);
   <!-- To update: edit src/data/news.ts, then replace the slugs/content below -->
   <section class="section section-alt">
     <div class="container">
-      <span class="section-label">Latest Updates</span>
-      <h2 class="section-title">Recent News</h2>
+      <div class="numbered">
+        <span class="numeral" aria-hidden="true">03</span>
+        <span class="label-mono">Latest Updates</span>
+        <h2 class="section-title editorial-title">Recent News</h2>
+      </div>
       <div class="grid-3">
         {recentNews.map(n => (
           <article class="news-card">
@@ -157,8 +172,11 @@ const top3Pubs = recentPubs.slice(0, 3);
   <!-- To update: edit src/data/publications.ts -->
   <section class="section">
     <div class="container">
-      <span class="section-label">Our Work</span>
-      <h2 class="section-title">Newest Publications</h2>
+      <div class="numbered">
+        <span class="numeral" aria-hidden="true">04</span>
+        <span class="label-mono">Our Work</span>
+        <h2 class="section-title editorial-title">Newest Publications</h2>
+      </div>
       <div class="pubs-list">
         {top3Pubs.map(pub => (
           <article class="pub-item highlighted">
@@ -182,5 +200,7 @@ const top3Pubs = recentPubs.slice(0, 3);
       </div>
     </div>
   </section>
+
+</div>
 
 </BaseLayout>

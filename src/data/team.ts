@@ -162,7 +162,7 @@ export const GRAD_STUDENTS: GradStudent[] = [
     role: 'MSc. Student',
     focus: 'Nick is a Master\'s student in the Department of Aerospace Engineering at UIUC.',
     email: 'nobrien5@illinois.edu',
-    // photo: '/images/team/nick-obrien.png',
+    photo: '/images/team/nick-obrien.png',
     github:   'https://github.com/nick4f42',
 
   },

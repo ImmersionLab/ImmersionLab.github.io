@@ -59,6 +59,19 @@ p  { line-height: 1.75; }
 .section { padding-block: 5rem; }
 .section-alt { background: var(--gray-50); }
 
+/* Justified prose — applied to multi-line body copy only.  Short or narrow
+   text (cards, captions, one-line leads) is left ragged-right on purpose:
+   justifying it opens up rivers of white space between words. */
+.about-text p,
+.research-body p,
+.software-desc p,
+.prospective-card p,
+.news-detail-body p,
+.collab-inner p {
+  text-align: justify;
+  hyphens: auto;
+}
+
 .section-label {
   font-family: 'Inter', sans-serif;
   font-size: .90rem;
@@ -619,7 +632,8 @@ p  { line-height: 1.75; }
   gap: 4rem;
   align-items: center;
 }
-.about-text p { color:var(--text-muted); font-size:1rem; }
+.about-text p { color: var(--text-muted); font-size: 1rem; }
+.about-text p + p { margin-top: 1rem; }
 .about-stats {
   display: grid;
   grid-template-columns: repeat(4,1fr);
@@ -1210,4 +1224,82 @@ p  { line-height: 1.75; }
     margin: 0 auto 1rem;
   }
   .member-photo-initials { font-size: 2rem; }
+}
+
+/* ════════════════════════════════════════════════════════════
+   EDITORIAL LAYER — HOME PAGE ONLY
+   ────────────────────────────────────────────────────────────
+   Ported from the Stitch concept.  Everything here is scoped to
+   .editorial so the other six pages keep the original styling
+   until we decide to roll this out site-wide.
+   ════════════════════════════════════════════════════════════ */
+.editorial {
+  --mono:      'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --navy-deep: #001432;
+  --rust:      #a73b00;
+  --hairline:  rgba(0,20,50,.18);
+}
+
+/* Faint 32px engineering grid */
+.technical-grid {
+  background-image:
+    linear-gradient(to right,  rgba(0,20,50,.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,20,50,.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Uppercase monospace micro-label — replaces .section-label on the home page */
+.label-mono {
+  display: block;
+  font-family: var(--mono);
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: .75rem;
+}
+
+/* Oversized watermark numeral behind a section heading */
+.numbered { position: relative; }
+.numbered > * { position: relative; z-index: 1; }
+.numbered > .numeral {
+  position: absolute;
+  z-index: 0;
+  top: -3rem;
+  left: -1rem;
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 8rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--navy-deep);
+  opacity: .06;
+  user-select: none;
+  pointer-events: none;
+}
+
+.editorial-title { font-style: italic; }
+
+/* Sharp corners, hairline border, hard offset shadow on hover */
+.editorial .research-card {
+  border-radius: 0;
+  border: 1px solid var(--hairline);
+  box-shadow: none;
+}
+.editorial .research-card:hover {
+  transform: none;
+  border-color: var(--rust);
+  box-shadow: 16px 16px 0 rgba(0,20,50,.05);
+}
+.editorial .card-title { font-style: italic; }
+.editorial .card-link {
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+
+@media (max-width: 1100px) {
+  .numbered > .numeral { display: none; }
 }
