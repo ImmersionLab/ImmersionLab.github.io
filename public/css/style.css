@@ -167,25 +167,23 @@ p  { line-height: 1.75; }
   text-decoration: none;
   flex-shrink: 0;
 }
+/* The ImmersionLab "I" mark. It fills with currentColor, so the colour is
+   set here on the container rather than inside the SVG. */
 .logo-mark {
-  font-family: 'Merriweather', Georgia, serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--white);
-  background: var(--orange);
-  width: 44px;
-  height: 44px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 40px;
+  height: 40px;
+  display: block;
   flex-shrink: 0;
+  color: var(--orange);
+  transition: color var(--transition);
 }
+.site-logo:hover .logo-mark { color: var(--white); }
 .logo-text { display:flex; flex-direction:column; line-height:1.2; }
 .logo-name {
-  font-family: 'Inter', sans-serif;
-  font-size: .85rem;
-  font-weight: 600;
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
   color: var(--white);
   white-space: nowrap;
 }
@@ -240,8 +238,8 @@ p  { line-height: 1.75; }
   padding-block: 3.5rem;
 }
 .footer-logo { display:flex; align-items:flex-start; gap:.75rem; margin-bottom:1.25rem; }
-.footer-logo .logo-mark { width:40px; height:40px; font-size:1rem; }
-.footer-group-name { font-family:'Inter',sans-serif; font-weight:600; font-size:.875rem; color:var(--white); margin-bottom:.15rem; }
+.footer-logo .logo-mark { width:40px; height:40px; margin-top:-.15rem; }
+.footer-group-name { font-family:'Merriweather',Georgia,serif; font-weight:700; font-size:1.05rem; color:var(--white); margin-bottom:.2rem; }
 .footer-dept { font-size:.775rem; color:rgba(255,255,255,.5); line-height:1.5; }
 .footer-tagline { font-size:.85rem; line-height:1.7; color:rgba(255,255,255,.5); max-width:400px; }
 .footer-links { display:flex; gap:3rem; }
@@ -409,6 +407,53 @@ p  { line-height: 1.75; }
   line-height: 1.8;
   margin-bottom: 2.5rem;
 }
+
+/* ── Hero manifesto: the "We immerse —" statement ── */
+.hero-light-tagline {
+  font-family: 'Merriweather', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 2.75rem;
+}
+.hero-manifesto { margin-bottom: 2.5rem; }
+.hero-manifesto-lead {
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 1.25rem;
+}
+.hero-manifesto-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+.hero-manifesto-list li {
+  position: relative;
+  padding-left: 2.25rem;
+  font-size: clamp(.98rem, 1.4vw, 1.08rem);
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+/* Short orange rule standing in for a bullet, aligned to the first line. */
+.hero-manifesto-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .85em;
+  width: 1.25rem;
+  height: 2px;
+  background: var(--orange);
+  border-radius: 1px;
+}
+.hero-manifesto-list strong { color: var(--navy); font-weight: 600; }
+/* The closing item is the human one — give it a touch more presence. */
+.hero-manifesto-list li:last-child strong { color: var(--navy); font-weight: 700; }
 
 /* ════════════════════════════════
    HERO — PAGE

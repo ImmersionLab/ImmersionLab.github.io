@@ -283,7 +283,7 @@ export const NEWS: NewsItem[] = [
     summary:
       'Congratulations to Dr. Nirmal Jayaprasad Nair for successfully defending his PhD thesis.',
     body: `<p>Congratulations to Dr. Nirmal Jayaprasad Nair for successfully defending his PhD thesis!</p>
-<p>Nirmal is the first member of the NUF Group to complete this achievement, marking an exciting milestone for both him and the group.</p>
+<p>Nirmal is the first member of ImmersionLab to complete this achievement, marking an exciting milestone for both him and the group.</p>
 <p>He will continue his career at McKinsey &amp; Company. Go Dr. Nair!</p>`,
   },
   {

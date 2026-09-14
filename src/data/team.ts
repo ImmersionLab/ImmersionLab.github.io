@@ -97,7 +97,7 @@ export const FACULTY: FacultyMember[] = [
     email: 'agoza@illinois.edu',
     website: 'https://aerospace.illinois.edu/directory/profile/agoza',
     photo: '/images/team/andres-goza2.png',
-    github: 'https://github.com/NUFgroup',
+    github: 'https://github.com/ImmersionLab',
     scholar: 'https://scholar.google.com/citations?user=l7tRwZgAAAAJ&hl=en&oi=ao'
   },
 ];
@@ -150,9 +150,9 @@ export const GRAD_STUDENTS: GradStudent[] = [
     initials: 'AM',
     name: 'Azzurra Meo',
     role: 'PhD Student',
-    focus: 'Azzurra is a Ph.D. student in the Department of Aerospace Engineering at UIUC. Her research focuses on numerical methods for fluid–structure interaction, with particular interest in preconditioning techniques for immersed boundary formulations. Her work aims to improve the efficiency and robustness of simulations involving complex moving boundaries and unsteady aerodynamic flows.',
+    focus: 'Azzurra is a Ph.D. candidate in the Department of Aerospace Engineering at UIUC. Her research focuses on numerical methods for incompressible flows, with particular attention on higher order techniques and fluid–structure interaction algorithms. Her work aims to improve the accuracy and numerical cost of immersed methods involving complex moving boundaries and unsteady aerodynamic flows.',
     email: 'ameo@illinois.edu',
-    photo: '/images/team/azzurra-meo.png',
+    photo: '/images/team/azzurra-meo.jpeg',
     github:   'https://github.com/meoazz',
     linkedin: 'https://www.linkedin.com/in/azzurra-m1108/',
   },
@@ -195,7 +195,7 @@ export const UNDERGRADS: Undergrad[] = [
     initials: 'KN',
     name: 'Khoi Nguyen',
     role: 'Undergraduate Researcher',
-    focus: 'AE@UIUC',
+    focus: 'AE @UIUC',
   },
 ];
 

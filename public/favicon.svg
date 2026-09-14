@@ -1,6 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#13294B"/>
-  <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle"
-        font-family="Georgia,serif" font-weight="700" font-size="14"
-        fill="#E84A27">NUF</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- ImmersionLab mark: serif "I" cut by an S-shaped streamline.
+       Geometry mirrors src/components/Logo.astro — keep the two in sync.
+       The cut is widened slightly here so it survives 16px rendering. -->
+  <mask id="il-cut-favicon" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
+    <rect width="64" height="64" fill="#fff"/>
+    <path d="M32 13.5 C27.3 19.5 27.3 26.5 32 32 C36.7 37.5 36.7 44.5 32 50.5"
+          stroke="#000" stroke-width="2.8" fill="none"/>
+  </mask>
+  <rect width="64" height="64" rx="12" fill="#13294B"/>
+  <g transform="translate(32 32) scale(0.8) translate(-32 -32)">
+    <path d="M13 8 H51 V13.5 H43.5 C39.5 13.5 38.5 15.5 38.5 20 V44 C38.5 48.5 39.5 50.5 43.5 50.5 H51 V56 H13 V50.5 H20.5 C24.5 50.5 25.5 48.5 25.5 44 V20 C25.5 15.5 24.5 13.5 20.5 13.5 H13 Z"
+          fill="#E84A27" mask="url(#il-cut-favicon)"/>
+  </g>
 </svg>

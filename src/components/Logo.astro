@@ -1,0 +1,55 @@
+---
+// Logo.astro — the ImmersionLab mark.
+//
+// A serif capital "I" split top-to-bottom by an S-shaped streamline cut,
+// evoking flow through an immersed interface.  Pure vector geometry — no
+// font dependency — and filled with `currentColor` so it inherits whatever
+// text colour the surrounding container sets.
+//
+// The cut is carved with a <mask> rather than hand-authored outlines, which
+// keeps it an exact constant width.  Mask ids must be unique per page, so
+// every instance passes its own `id`.
+//
+// Props
+// ─────
+// id    – unique suffix for the mask element (required when >1 per page)
+// size  – rendered width/height in px
+// class – extra classes for the <svg>
+
+interface Props {
+  id?: string;
+  size?: number;
+  class?: string;
+}
+
+const { id = 'logo', size = 44, class: className = '' } = Astro.props;
+const maskId = `il-cut-${id}`;
+
+// Serif "I": bars span x 13→51, stem spans x 25.5→38.5, bracketed joins.
+const MARK =
+  'M13 8 H51 V13.5 H43.5 C39.5 13.5 38.5 15.5 38.5 20 V44 ' +
+  'C38.5 48.5 39.5 50.5 43.5 50.5 H51 V56 H13 V50.5 H20.5 ' +
+  'C24.5 50.5 25.5 48.5 25.5 44 V20 C25.5 15.5 24.5 13.5 20.5 13.5 H13 Z';
+
+// S-curve running the full height of the stem, flush with the serif undersides.
+// It swings ~3.5 units either side of centre, so the stem is never severed —
+// the thinner half stays ~1.8 units wide at the widest point of each bend.
+const CUT = 'M32 13.5 C27.3 19.5 27.3 26.5 32 32 C36.7 37.5 36.7 44.5 32 50.5';
+---
+
+<svg
+  class={`il-logo ${className}`.trim()}
+  width={size}
+  height={size}
+  viewBox="0 0 64 64"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-label="ImmersionLab"
+>
+  <mask id={maskId} maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
+    <rect width="64" height="64" fill="#fff" />
+    <path d={CUT} stroke="#000" stroke-width="2.4" fill="none" />
+  </mask>
+  <path d={MARK} fill="currentColor" mask={`url(#${maskId})`} />
+</svg>

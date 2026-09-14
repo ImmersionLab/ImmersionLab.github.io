@@ -18,8 +18,8 @@ const sorted = [...NEWS].sort((a, b) => parseDate(b.date) - parseDate(a.date));
 const years = [...new Set(sorted.map(n => n.year))];
 ---
 <BaseLayout
-  title="News | NUF Group — UIUC"
-  description="Latest news, announcements, and updates from the Numerics and Unsteady Flows Group at UIUC."
+  title="News | ImmersionLab — UIUC"
+  description="Latest news, announcements, and updates from ImmersionLab at UIUC."
 >
   <main>
     <section class="hero-page news-simple-hero">
@@ -27,7 +27,7 @@ const years = [...new Set(sorted.map(n => n.year))];
         <span class="section-label">News</span>
         <h1 class="hero-page-title">News &amp; Updates</h1>
         <p class="hero-page-desc">
-          Announcements, awards, publications, and other updates from the NUF Group.
+          Announcements, awards, publications, and other updates from ImmersionLab.
         </p>
       </div>
     </section>
