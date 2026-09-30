@@ -105,17 +105,6 @@ export const FACULTY: FacultyMember[] = [
 // ── Graduate Students ─────────────────────────────────────────
 export const GRAD_STUDENTS: GradStudent[] = [
   {
-    initials: 'SB',
-    name: 'Srikumar Balasubramanian',
-    role: 'PhD Student',
-    focus: 'Srikumar is a Ph.D. student in the Department of Aerospace Engineering at UIUC.',
-    email: 'sb44@illinois.edu',
-    photo: '/images/team/srikumar-balasubramanian.png',
-    github:   'https://github.com/srikumarbalasubramanian',
-    linkedin: 'https://www.linkedin.com/in/srikumar1998/',
-    scholar:  'https://scholar.google.com/citations?hl=en&user=A3L_JO4AAAAJ',
-  },
-  {
     initials: 'AMB',
     name: 'Arturo Machado Burgos',
     role: 'PhD Student',
@@ -156,22 +145,17 @@ export const GRAD_STUDENTS: GradStudent[] = [
     github:   'https://github.com/meoazz',
     linkedin: 'https://www.linkedin.com/in/azzurra-m1108/',
   },
-  {
-    initials: 'NO',
-    name: "Nick O'Brien",
-    role: 'MSc. Student',
-    focus: 'Nick is a Master\'s student in the Department of Aerospace Engineering at UIUC.',
-    email: 'nobrien5@illinois.edu',
-    photo: '/images/team/nick-obrien.png',
-    github:   'https://github.com/nick4f42',
-
-  },
 ];
 
 
 
 // ── Graduate Alumni ───────────────────────────────────────────
 export const GRAD_ALUMNI: Alumnus[] = [
+  {
+    name: 'Dr. Srikumar Balasubramanian',
+    degree: 'PhD, 2026',
+    linkedin: 'https://www.linkedin.com/in/srikumar1998/'
+  },
   {
     name: 'Ernold Thompson',
     degree: 'MSc, 2024',
@@ -201,7 +185,8 @@ export const UNDERGRADS: Undergrad[] = [
 
 // ── Undergraduate Alumni ──────────────────────────────────────
 export const UNDERGRAD_ALUMNI: UndergradAlumnus[] = [
-  {name: 'Zavar Abidi',      degree: 'AE @UIUC' },
+  { name: "Nick O'Brien",    degree: 'AE @UIUC' },
+  { name: 'Zavar Abidi',     degree: 'AE @UIUC' },
   { name: 'Emily Williams',  degree: 'AE @UIUC' },
   { name: 'Avery Moore',     degree: 'AE @UIUC' },
   { name: 'Hemang Dama',     degree: 'AE @UIUC' },

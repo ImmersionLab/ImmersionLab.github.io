@@ -36,6 +36,34 @@ export interface NewsItem {
 
 export const NEWS: NewsItem[] = [
   // ── 2026 ──────────────────────────────────────────────────
+    {
+    slug: 'srikumar-phd-defense',
+    title: 'Congratulations to Srikumar for defending his PhD!',
+    date: 'September 21, 2026',
+    shortDate: 'Sep 2026',
+    year: 2026,
+    category: 'Defense',
+    tagClass: 'tag-teal',
+    summary:
+      'Congratulations to Dr. Srikumar Balasubramanian for successfully defending his PhD thesis.',
+    body: `<p>Congratulations to Dr. Srikumar Balasubramanian for successfully defending his PhD thesis: "The Interface Manifold-Aware Projection Method: an immersed-boundary formulation that accurately and efficiently surfs the no-slip manifold"!</p>
+<p>Srikumar is the second member of ImmersionLab to complete this achievement, marking an exciting milestone for both him and the group.</p>
+<p>He will continue his career as a Postdoctoral researcher at Rajat Mittal's lab at John's Hopkins University.</p>
+<p>Go Dr. Balasubramanian!</p>`,
+  },
+  {
+    slug: 'elyse-azzurra-mf3-fellowship',
+    title: 'Congratulations to Elyse and Azzurra for receiving the MF3 Fellowship!',
+    date: 'June 22, 2026',
+    shortDate: 'Jun 2026',
+    year: 2026,
+    category: 'Award',
+    tagClass: 'tag-gold',
+    summary:
+      'Elyse and Azzurra were awarded the Mavis Future Faculty Fellowship.',
+    body: `<p>Elyse Jones and Azzurra Meo were awarded the prestigious Mavis Future Faculty Fellowship, a year-long unique program designed to prepare doctoral students to become excellent faculty members.</p>
+<p>Well done!!</p>`,
+  },
   {
     slug: 'jfs-fluid-metamaterial-interaction',
     title: 'Our paper on aerodynamic fluid-metamaterial interaction was accepted to JFS!',
@@ -282,7 +310,7 @@ export const NEWS: NewsItem[] = [
     tagClass: 'tag-teal',
     summary:
       'Congratulations to Dr. Nirmal Jayaprasad Nair for successfully defending his PhD thesis.',
-    body: `<p>Congratulations to Dr. Nirmal Jayaprasad Nair for successfully defending his PhD thesis!</p>
+    body: `<p>Congratulations to Dr. Nirmal Jayaprasad Nair for successfully defending his PhD thesis: "Bio-Inspired Flow Control Using Fluid-Structure Interaction Modeling and Machine Learning"!</p>
 <p>Nirmal is the first member of ImmersionLab to complete this achievement, marking an exciting milestone for both him and the group.</p>
 <p>He will continue his career at McKinsey &amp; Company. Go Dr. Nair!</p>`,
   },
