@@ -125,7 +125,8 @@ p  { line-height: 1.75; }
 .btn-outline-dark:hover { background:rgba(255,255,255,.08); color:var(--white); border-color:rgba(255,255,255,.6); }
 
 /* ── Tags ── */
-.tag {
+.tag,
+.news-tag {
   display: inline-block;
   padding: .2rem .65rem;
   border-radius: 100px;
@@ -595,6 +596,19 @@ p  { line-height: 1.75; }
 .pub-authors { font-size:.85rem; color:var(--text-muted); margin-bottom:.25rem; font-style:italic; }
 .pub-venue  { font-size:.85rem; color:var(--text-muted); margin-bottom:.75rem; }
 .pub-venue em { font-style:normal; font-weight:500; color:var(--navy); }
+/* News reuses this shell, where the headline is a link to the detail page. */
+.pub-title a { color:inherit; text-decoration:none; transition:color var(--transition); }
+.pub-title a:hover { color:var(--orange); }
+/* News cards drop the venue line, so the headline carries the gap to the tag,
+   and the right-hand column holds "Sep 2026" rather than a bare year. */
+.news-item .pub-title { margin-bottom:.7rem; }
+/* The whole news card is one click target: the headline's link is stretched
+   over the card with a pseudo-element. .pub-item is already position:relative,
+   so inset:0 covers it exactly, and hovering anywhere drives the a:hover
+   colour change plus the card's existing shadow. */
+.news-item .pub-title a::after { content:''; position:absolute; inset:0; }
+.news-item:hover { border-color:rgba(232,74,39,.35); }
+.news-item:has(.pub-title a:focus-visible) { outline:2px solid var(--orange); outline-offset:2px; }
 .pub-links  { display:flex; flex-wrap:wrap; gap:.4rem; }
 .pub-link {
   display: inline-flex;
@@ -610,63 +624,14 @@ p  { line-height: 1.75; }
   transition: all var(--transition);
 }
 .pub-link-doi   { background:var(--navy); color:var(--white); }
-.pub-link-doi:hover { background:var(--navy-light); color:var(--white); }
+/* Hover flips to the site orange so the badge clearly reads as clickable
+   (navy -> navy-light was too subtle to notice). */
+.pub-link-doi:hover { background:var(--orange); color:var(--white); }
 .pub-link-pdf   { background:var(--orange); color:var(--white); }
 .pub-link-pdf:hover { background:var(--orange-light); color:var(--white); }
 .pub-link-arxiv { background:transparent; color:var(--navy); border:1px solid var(--gray-300); }
 .pub-link-arxiv:hover { border-color:var(--navy); background:var(--gray-50); }
 .pub-year { font-family:'Inter',sans-serif; font-size:.75rem; font-weight:600; color:var(--text-muted); white-space:nowrap; padding-top:.1rem; flex-shrink:0; }
-
-/* ════════════════════════════════
-   NEWS PAGE — SIMPLE LIST
-   ════════════════════════════════ */
-
-.news-simple-section {
-  padding-top: 4rem;
-}
-
-.news-simple-container {
-  max-width: 1050px;
-}
-
-.news-simple-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.news-simple-item {
-  display: grid;
-  grid-template-columns: 110px 125px 1fr;
-  gap: 1.25rem;
-  align-items: baseline;
-}
-
-.news-simple-tag {
-  justify-self: start;
-  white-space: nowrap;
-}
-
-.news-simple-date {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  color: var(--text);
-  font-size: 1rem;
-  white-space: nowrap;
-}
-
-.news-simple-link {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.45;
-  color: #0b57b7;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.news-simple-link:hover {
-  color: var(--orange);
-}
 
 /* ════════════════════════════════
    HOME PAGE
@@ -1109,24 +1074,6 @@ p  { line-height: 1.75; }
   .cta-inner { flex-direction:column; text-align:center; }
   .cta-actions { justify-content:center; }
   .footer-bottom-inner { flex-direction:column; gap:.5rem; text-align:center; }
-  .news-simple-item {
-    grid-template-columns: 1fr;
-    gap: .35rem;
-    padding-bottom: .9rem;
-    border-bottom: 1px solid var(--gray-200);
-  }
-
-  .news-simple-tag {
-    width: fit-content;
-  }
-
-  .news-simple-date {
-    font-size: .95rem;
-  }
-
-  .news-simple-link {
-    font-size: 1rem;
-  }
 }
 
 /* ════════════════════════════════

@@ -65,6 +65,18 @@ export const NEWS: NewsItem[] = [
 <p>Well done!!</p>`,
   },
   {
+    slug: 'azzurra-discovor-2026',
+    title: 'Azzurra presented her work at DisCoVor 2026!',
+    date: 'June 8, 2026',
+    shortDate: 'Jun 2026',
+    year: 2026,
+    category: 'Conference',
+    tagClass: 'tag-purple',
+    summary:
+      'Azzurra presented Srikumar\'s and her work at the DisCoVor 2026 Conference in Edinburgh, UK.',
+    body: `<p>Azzurra presented Srikumar\'s and her work at the DisCoVor 2026 Conference in Edinburgh, UK.</p>`,
+  },
+  {
     slug: 'jfs-fluid-metamaterial-interaction',
     title: 'Our paper on aerodynamic fluid-metamaterial interaction was accepted to JFS!',
     date: 'April 1, 2026',
@@ -250,7 +262,7 @@ export const NEWS: NewsItem[] = [
     slug: 'afosr-muri-fluid-metamaterial-interaction',
     title: 'We were awarded a MURI grant from AFOSR!',
     date: 'June 6, 2023',
-    shortDate: 'June 2023',
+    shortDate: 'Jun 2023',
     year: 2023,
     category: 'Funding',
     tagClass: 'tag-navy',

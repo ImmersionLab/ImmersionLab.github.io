@@ -1,10 +1,13 @@
 ---
 // news/index.astro — News list page
-// Automatically grouped by year, descending, from src/data/news.ts.
-// Clicking a headline navigates to the generated detail page.
+// Mirrors the publications page layout: a sticky "Jump to Year" sidebar
+// beside year-grouped entries.  Each entry reuses the .pub-item shell so
+// the two pages stay visually identical:
+//   line 1 – the headline (links to the detail page), with the month and
+//            year sitting right-aligned where a publication shows its year
+//   badge  – the category tag, sitting where a publication shows its DOI
 //
-// To add a news item: add an entry to src/data/news.ts.
-// No edits needed here.
+// To add a news item: add an entry to src/data/news.ts.  No edits needed here.
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { NEWS } from '../../data/news';
 
@@ -15,41 +18,69 @@ function parseDate(d: string): number {
 }
 const sorted = [...NEWS].sort((a, b) => parseDate(b.date) - parseDate(a.date));
 
+// Years, newest first, and the items belonging to each
 const years = [...new Set(sorted.map(n => n.year))];
+const byYear = new Map<number, typeof sorted>();
+for (const year of years) {
+  byYear.set(year, sorted.filter(n => n.year === year));
+}
 ---
 <BaseLayout
   title="News | ImmersionLab — UIUC"
   description="Latest news, announcements, and updates from ImmersionLab at UIUC."
 >
-  <main>
-    <section class="hero-page news-simple-hero">
-      <div class="container">
-        <span class="section-label">News</span>
-        <h1 class="hero-page-title">News &amp; Updates</h1>
-        <p class="hero-page-desc">
-          Announcements, awards, publications, and other updates from ImmersionLab.
-        </p>
-      </div>
-    </section>
 
-    <section class="section news-simple-section">
-      <div class="container news-simple-container">
-        <div class="news-simple-list">
-          {sorted.map((item) => (
-            <div class="news-simple-item">
-              <div class="news-simple-date">{item.shortDate}</div>
+  <section class="hero-page">
+    <div class="container">
+      <span class="section-label">News</span>
+      <h1 class="hero-page-title">News &amp; Updates</h1>
+      <p class="hero-page-desc">
+        Announcements, awards, publications, and other updates from ImmersionLab.
+        Click any item to read more.
+      </p>
+    </div>
+  </section>
 
-              <span class={`news-simple-tag news-tag ${item.tagClass}`}>
-                {item.category}
-              </span>
+  <section class="section">
+    <div class="container pubs-layout">
 
-              <a href={`/news/${item.slug}/`} class="news-simple-link">
-                {item.title}
-              </a>
-            </div>
-          ))}
+      <!-- ── Sidebar ── -->
+      <aside class="pubs-sidebar">
+        <div class="sidebar-card">
+          <h3>Jump to Year</h3>
+          <nav class="year-nav">
+            {years.map(year => (
+              <a href={`#year-${year}`} class="year-link">{year}</a>
+            ))}
+          </nav>
         </div>
+      </aside>
+
+      <!-- ── News list ── -->
+      <div class="pubs-main">
+        {years.map(year => (
+          <div id={`year-${year}`} class="year-group">
+            <h2 class="year-heading">{year}</h2>
+            <div class="pub-list">
+              {(byYear.get(year) ?? []).map(item => (
+                <article class="pub-item news-item">
+                  <div class="pub-body">
+                    <p class="pub-title">
+                      <a href={`/news/${item.slug}/`}>{item.title}</a>
+                    </p>
+                    <div class="pub-links">
+                      <span class={`tag ${item.tagClass}`}>{item.category}</span>
+                    </div>
+                  </div>
+                  <span class="pub-year">{item.shortDate}</span>
+                </article>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
-    </section>
-  </main>
+
+    </div>
+  </section>
+
 </BaseLayout>
